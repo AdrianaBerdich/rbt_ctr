@@ -1,0 +1,9 @@
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\bin\Debug\Licenta_serial.exe.config
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\bin\Debug\Licenta_serial.exe
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\bin\Debug\Licenta_serial.pdb
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\obj\Debug\Licenta_serial.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\obj\Debug\Licenta_serial.Form1.resources
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\obj\Debug\Licenta_serial.Properties.Resources.resources
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\obj\Debug\Licenta_serial.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\obj\Debug\Licenta_serial.exe
+c:\users\user\documents\visual studio 2013\Licenta_serial\Licenta_serial\obj\Debug\Licenta_serial.pdb
