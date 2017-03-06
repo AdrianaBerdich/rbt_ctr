@@ -108,8 +108,8 @@ void Inainte()
   digitalWrite(in2, LOW); 
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
-  analogWrite(enA, 100);
-  analogWrite(enB, 100);
+  analogWrite(enA, 200);
+  analogWrite(enB, 255);
 }
 void Stanga()
 {
@@ -117,8 +117,8 @@ void Stanga()
   digitalWrite(in2, LOW); 
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
-  analogWrite(enA, 70);
-  analogWrite(enB, 70);
+  analogWrite(enA, 200);
+  analogWrite(enB, 200);
 }
 void Dreapta()
 {
@@ -126,8 +126,8 @@ void Dreapta()
   digitalWrite(in2, LOW); 
   digitalWrite(in3, LOW);
   digitalWrite(in4, LOW);
-  analogWrite(enA, 70);
-  analogWrite(enB, 70);
+  analogWrite(enA, 200);
+  analogWrite(enB, 200);
 }
 void Spate()
 {
@@ -135,8 +135,8 @@ void Spate()
   digitalWrite(in2, HIGH);
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
-  analogWrite(enA, 100);
-  analogWrite(enB, 100);
+  analogWrite(enA, 200);
+  analogWrite(enB, 250);
 }
 void Stopp()
 {
@@ -156,15 +156,16 @@ void loop()
       if (data == 'w')
       {
         //digitalWrite(13, HIGH);
-        Fata();
+        //Fata();
+        Inainte();
         
       }
       if (data == 'd')
       {
         Stanga();
-        delay(300);
-        Fata();
-        delay(8000);
+        //delay(300);
+        //Fata();
+        //delay(8000);
       }
       if (data == 's')
       {

@@ -27,7 +27,7 @@ long duration2=0, cm2=0;
 #define trigPin3 13 //2
 #define echoPin3 2
 long duration3=0, cm3=0;
-int distance1,distance2,distance3;
+int dist1,dist2,dist3;
 int erroare = 0;
 int erroare_old = 0;
 int erroare_sum = 0;
@@ -73,8 +73,8 @@ int sonar1()
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
   duration1 = pulseIn(echoPin, HIGH);
- distance1 = microsecondsToCentimeters(duration1);
-  return distance1;
+ dist1 = microsecondsToCentimeters(duration1);
+  return dist1;
 }
 
 int sonar2()
@@ -85,8 +85,8 @@ int sonar2()
   delayMicroseconds(10);
   digitalWrite(trigPin2, LOW);
   duration2 = pulseIn(echoPin2, HIGH);
- distance2 = microsecondsToCentimeters(duration2);
-  return distance2;
+ dist2 = microsecondsToCentimeters(duration2);
+  return dist2;
 }
 
 int sonar3()
@@ -97,8 +97,8 @@ int sonar3()
   delayMicroseconds(10);
   digitalWrite(trigPin3, LOW);
   duration3 = pulseIn(echoPin3, HIGH);
- distance3 = microsecondsToCentimeters(duration3);
-  return distance3;
+ dist3 = microsecondsToCentimeters(duration3);
+  return dist3;
 }
 
 void fata(int rpm)
@@ -154,7 +154,7 @@ void loop()
   sonar2();
   sonar3();
  
-  erroare =  distance2 - 20;
+  erroare =  dist2 - 20;
   correction = KP * erroare + (erroare_old + erroare) * KI +  (erroare_old - erroare) * KD;
   erroare_old = erroare;
   erroare_sum += erroare;
@@ -170,36 +170,36 @@ void loop()
       value=255 ; //542;
     }
 
-  if( (distance2 < 40) && (distance1 > 40) && (distance3 > 40))
+  if( (dist2 < 40) && (dist1 > 40) && (dist3 > 40))
   {
       fata(value);  
   }
- /* if( (distance2 < 19) &&  (distance2 > 2) && (distance1 > 40) && (distance3 > 40))
+ /* if( (dist2 < 19) &&  (dist2 > 2) && (dist1 > 40) && (dist3 > 40))
   {
       spate(-value);
   }
-  if( ((distance2 > 40 ) || (distance2 <2 ))&& (distance1 > 40) && (distance3 > 40))
+  if( ((dist2 > 40 ) || (dist2 <2 ))&& (dist1 > 40) && (dist3 > 40))
   {
       stop(); 
   }
-  if( (distance2 < 21 ) && (distance2 > 19 ) && (distance1 > 40) && (distance3 > 40))
+  if( (dist2 < 21 ) && (dist2 > 19 ) && (dist1 > 40) && (dist3 > 40))
   {
       stop(); 
   }
   */
-  if ((distance2 > 40) && (distance1 < 25))
+  if (((dist2 > 40) && (dist1 < 25)&& (dist3 > 40)) || ((dist2 < 25) && (dist1 < 25) && (dist3 > 40)))
   {
     stanga(value);
   }
-  if ((distance2 > 40) && (distance3 < 25))
+  if (((dist2 > 40) && (dist3 < 25)  && (dist1 > 40)) || ((dist2 < 25) && (dist3 < 25) && (dist1 > 40)))
   {
     dreapta(value);
   }
   
  
-     Serial.println(distance1);
-     Serial.println(distance2);
-     Serial.println(distance3);
+     Serial.println(dist1);
+     Serial.println(dist2);
+     Serial.println(dist3);
      Serial.println(erroare);
      Serial.println(correction);
      Serial.println(value);
